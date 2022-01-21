@@ -39,33 +39,15 @@ void knapsack(node a[], int n, int w){
 int main(void){
     int n, w;
 
-/* Note: txt file input rules: 
+/* Note: txt file and terminal input rules: 
                             first line: number of bottles/source n
                             second line: weight of knapsack W
                             then n lines: weight and benifit */
 
-    // ifstream inputFile("Knapsack.txt");
-    // inputFile >> n;
-    // inputFile >> w;
-    // node a[n];
-    // int i=0;
-    // while(!inputFile.eof()){
-    //     inputFile >> a[i].weight;
-    //     inputFile >> a[i].benifit;
-    //     a[i].item_no = i+1;
-    //     if(i<n)
-    //         i++;
-    //     else 
-    //         break;
-    // }
-    // inputFile.close();
-
-    cout<<"Enter the number of items: ";
+    //freopen("Knapsack.txt", "r", stdin);
     cin>>n;
-    cout<<"\nEnter the weight of knapsack: ";
     cin>>w;
     node a[n];
-    cout<<"\nEnter the weight and benifit of each item: "<<endl;
     for(int i=0; i<n; i++){
         cin>>a[i].weight>>a[i].benifit;
         a[i].item_no = i+1;
