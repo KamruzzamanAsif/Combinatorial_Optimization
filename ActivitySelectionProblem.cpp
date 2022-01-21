@@ -30,6 +30,10 @@ void maxActivity(node a[], int n){
 int main(void){
     int n;
 
+/* Note: txt file input rules: 
+                            first line: number of activities n
+                            then n lines: starting time and finishing time */
+
     // ifstream inputFile("Activity.txt");
     // inputFile >> n;
     // node a[n];
@@ -43,7 +47,7 @@ int main(void){
     //         break;
     // }
     // inputFile.close();
-
+    
     cout<<"Enter the number of activities: ";
     cin>>n;
     node a[n];

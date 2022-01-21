@@ -12,7 +12,7 @@ bool compare(struct node x, struct node y){
     return float(x.benifit)/float(x.weight) > float(y.benifit)/float(y.weight);
 }
 
-void fractionalKnapsack(node a[], int n, int w){
+void knapsack(node a[], int n, int w){
     int currentWeight = 0, r;
     float totalBenefit = 0.00;
     sort(a, a+n, compare);
@@ -39,14 +39,19 @@ void fractionalKnapsack(node a[], int n, int w){
 int main(void){
     int n, w;
 
+/* Note: txt file input rules: 
+                            first line: number of bottles/source n
+                            second line: weight of knapsack W
+                            then n lines: weight and benifit */
+
     // ifstream inputFile("Knapsack.txt");
     // inputFile >> n;
     // inputFile >> w;
     // node a[n];
     // int i=0;
     // while(!inputFile.eof()){
-    //     inputFile >> a[i].benifit;
     //     inputFile >> a[i].weight;
+    //     inputFile >> a[i].benifit;
     //     a[i].item_no = i+1;
     //     if(i<n)
     //         i++;
@@ -60,13 +65,13 @@ int main(void){
     cout<<"\nEnter the weight of knapsack: ";
     cin>>w;
     node a[n];
-    cout<<"\nEnter the benifit and weight of each item: "<<endl;
+    cout<<"\nEnter the weight and benifit of each item: "<<endl;
     for(int i=0; i<n; i++){
-        cin>>a[i].benifit>>a[i].weight;
+        cin>>a[i].weight>>a[i].benifit;
         a[i].item_no = i+1;
     }
 
-    fractionalKnapsack(a,n,w);
+    knapsack(a,n,w);
 
     return 0;
 }
