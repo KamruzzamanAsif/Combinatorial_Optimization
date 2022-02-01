@@ -34,7 +34,7 @@ int main(void){
                             first line: number of activities n
                             then n lines: starting time and finishing time */
 
-    //freopen("Activity.txt", "r", stdin);
+    freopen("Activity.txt", "r", stdin);
     cin>>n;
     node a[n];
     for(int i=0; i<n; i++){
