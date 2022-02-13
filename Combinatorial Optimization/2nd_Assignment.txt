@@ -1,4 +1,0 @@
-1. rod cutting: https://techiedelight.com/compiler/?Amvh
-2. chocolate cutting: https://techiedelight.com/compiler/?Qnpt
-3. lcs: https://techiedelight.com/compiler/?yNwk
-4. edit distance: https://techiedelight.com/compiler/?s3uH
