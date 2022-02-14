@@ -1,0 +1,8 @@
+1. LIS
+    Using LCS: https://techiedelight.com/compiler/?NO59
+    UsNaive DP approach (O(N2) complexity): https://techiedelight.com/compiler/?ZDfe
+    Using time-efficient DP approach (O(NlogN) complexity): https://techiedelight.com/compiler/?qivk
+
+2. The memorized version of the MCM algorithm: https://techiedelight.com/compiler/?aCL-
+3. Rock climbing algorithm: https://techiedelight.com/compiler/?v2am
+4. Coin change algorithm: https://techiedelight.com/compiler/?-Gw6

@@ -38,7 +38,7 @@ int main() {
   for(int i=0; i<n; i++)
     cin>>coins[i];
   
-  cout<<findMinimumCoins(k,n);
+  cout<<"The minimum coins needed is: "<<findMinimumCoins(k,n);
 
   return 0;
 }
