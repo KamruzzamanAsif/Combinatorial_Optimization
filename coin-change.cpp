@@ -11,12 +11,12 @@ int d[N];
 int findMinimumCoins(int n, int k)
 {
     d[0] = 0; // base case
-    for(int i=1; i<=n; i++)
+    for(int i=1; i<=k; i++)
         d[i] = inf;
     
-    for(int i=1; i<=n; i++)
+    for(int i=1; i<=k; i++)
     {
-        for(int j=0; j<k; j++)
+        for(int j=0; j<n; j++)
         {
             if(coins[j] <= i)
             {
@@ -25,7 +25,7 @@ int findMinimumCoins(int n, int k)
         }
     }
 
-    return d[n];
+    return d[k];
 }
 
 int main() {
@@ -38,7 +38,7 @@ int main() {
   for(int i=0; i<n; i++)
     cin>>coins[i];
   
-  cout<<"The minimum coins needed is: "<<findMinimumCoins(k,n);
+  cout<<"The minimum coins needed is: "<<findMinimumCoins(n,k);
 
   return 0;
 }
