@@ -1,50 +1,60 @@
-#include <bits/stdc++.h>
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
-const int N=100;
-int weight[N];
-int value[N];
-int d[N][N];
+void knapSack(int W, int n, int val[], int wt[]);
+int getMax(int x, int y);
 
+int main(void) {
 
-int main(void){
-    freopen("0-1Knapsack.txt", "r", stdin);
-    int n, W;
-    cin>>n>>W;
+  //the first element is set to -1 as
+  //we are storing item from index 1
+  //in val[] and wt[] array
+  int val[] = {-1, 100, 20, 60, 40};  //value of the items
+  int wt[] = {-1, 3, 2, 4, 1};        //weight of the items
+  
+  int n = 4;  //total items
+  int W = 5;  //capacity of knapsack
+  
+  knapSack(W, n, val, wt);
 
-    for(int i=1; i<=n; i++){
-        cin>>weight[i]>>value[i];
+  return 0;
+}
+
+int getMax(int x, int y) {
+  if(x > y) {
+    return x;
+  } else {
+    return y;
+  }
+}
+
+void knapSack(int W, int n, int val[], int wt[]) {
+  int i, w;
+
+  //value table having n+1 rows and W+1 columns
+  int V[n+1][W+1];
+
+  //fill the row i=0 with value 0
+  for(w = 0; w <= W; w++) {
+    V[0][w] = 0;
+  }
+
+  //fille the column w=0 with value 0
+  for(i = 0; i <= n; i++) {
+    V[i][0] = 0;
+  }
+
+  //fill the value table
+  for(i = 1; i <= n; i++) {
+    for(w = 1; w <= W; w++) {
+      if(wt[i] <= w) {
+        V[i][w] = getMax(V[i-1][w], val[i] + V[i-1][w - wt[i]]);
+      } else {
+        V[i][w] = V[i-1][w];
+      }
     }
+  }
 
-    for(int i=0; i<=n; i++){
-        d[i][0]=0;
-    }
-
-    for(int j=0; j<=W; j++){
-        d[0][j]=0;
-    }
-
-    for(int i=1; i<=n; i++){
-        for(int w=1; w<=W; w++){
-            if(weight[i]>w){
-                d[i][w] = d[i-1][w];
-            }
-            else{
-                d[i][w] = max(value[i]+d[i-1][w-weight[i]], d[i-1][w]);
-                
-            }
-        }
-    }
-
-    for(int i=0; i<=n; i++){
-        for(int j=0; j<=W; j++){
-            cout<<d[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-
-    cout<<d[n][W];
-
-    return 0;
+  //max value that can be put inside the knapsack
+  printf("Max Value: %d\n", V[n][W]);
 }
