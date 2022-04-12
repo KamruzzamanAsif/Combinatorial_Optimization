@@ -133,7 +133,7 @@ int main()
 	g.addEdge(4, 5, -2);
 
 	int s = 1;
-	cout << "Following are shortest distances from source " << s <<" n";
+	cout << "Following are shortest distances from source " << s <<": ";
 	g.shortestPath(s);
 
 	return 0;

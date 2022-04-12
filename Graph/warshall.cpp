@@ -64,7 +64,7 @@ void floydWarshall(int graph[][V])
 	printSolution(dist);
 }
 
-/* A utility function to print solution */
+
 void printSolution(int dist[][V])
 {
 	cout << "The following matrix shows the shortest "
@@ -104,4 +104,3 @@ int main()
 	return 0;
 }
 
-// This code is contributed by Mythri J L
